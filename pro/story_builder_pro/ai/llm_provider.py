@@ -9,7 +9,7 @@ except ImportError:
     class ChatOpenAI:
         def __init__(self, *args, **kwargs):
             raise ImportError(
-                "AI features require extra dependencies. Install with: pip install story-builder[ai]"
+                "AI features require extra dependencies. Install with: pip install story-builder-pro"
             )
     HAS_AI_DEPS = False
 
@@ -20,7 +20,7 @@ class OpenRouterLLM(ChatOpenAI):
     def __init__(self, *args, **kwargs):
         if not HAS_AI_DEPS:
             raise ImportError(
-                "AI features require extra dependencies. Install with: pip install story-builder[ai]"
+                "AI features require extra dependencies. Install with: pip install story-builder-pro"
             )
         super().__init__(*args, **kwargs)
 
@@ -38,7 +38,7 @@ class LLMProvider:
     def get_llm(model_name: str, api_key: Optional[str] = None, temperature: float = 0.7, streaming: bool = False):
         if not HAS_AI_DEPS:
             raise ImportError(
-                "AI features require extra dependencies. Install with: pip install story-builder[ai]"
+                "AI features require extra dependencies. Install with: pip install story-builder-pro"
             )
 
         api_key = api_key or os.getenv("OPENROUTER_API_KEY")

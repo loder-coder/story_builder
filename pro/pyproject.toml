@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "story-builder-pro"
+version = "0.1.0"
+description = "Premium AI features for Story Builder Engine"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "story-builder>=0.1.0",
+    "langchain-openai>=0.1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["story_builder_pro*"]

@@ -1,3 +1,4 @@
+LICENSE
 README.md
 pyproject.toml
 story_builder/__init__.py
@@ -8,9 +9,6 @@ story_builder.egg-info/dependency_links.txt
 story_builder.egg-info/entry_points.txt
 story_builder.egg-info/requires.txt
 story_builder.egg-info/top_level.txt
-story_builder/ai/__init__.py
-story_builder/ai/interfaces.py
-story_builder/ai/llm_provider.py
 story_builder/core/__init__.py
 story_builder/core/conditions.py
 story_builder/core/effects.py

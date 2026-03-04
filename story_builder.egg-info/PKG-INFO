@@ -4,11 +4,13 @@ Version: 0.1.0
 Summary: Deterministic State-Driven Interactive Narrative Engine SDK
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: pydantic>=2.0
 Provides-Extra: ai
 Requires-Dist: langchain-openai>=0.1.0; extra == "ai"
 Provides-Extra: viz
 Requires-Dist: graphviz>=0.20.0; extra == "viz"
+Dynamic: license-file
 
 # 🚀 Story Builder Engine
 

@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Dict, Any, List, Optional
-from story_builder.core.graph import StoryGraph
-from story_builder.core.node import Node
+from story_builder import StoryGraph, Node
 
 class AIBuilder(ABC):
     """Pro: AI branch and node generation logic."""

@@ -1,0 +1,9 @@
+# Story Builder Pro License
+
+This software is part of the Story Builder Pro package. 
+Commercial use of the AI features and Pro SDK requires a valid commercial license purchased from Gumroad.
+
+For non-commercial use, the terms of the MIT License apply as stated in the root LICENSE file.
+
+Copyright (c) 2025 story_builder
+https://gumroad.com/
