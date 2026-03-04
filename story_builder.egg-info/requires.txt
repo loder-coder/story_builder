@@ -1,7 +1,0 @@
-pydantic>=2.0
-
-[ai]
-langchain-openai>=0.1.0
-
-[viz]
-graphviz>=0.20.0

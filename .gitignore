@@ -1,21 +1,33 @@
-# 무시할 파일
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
 
-**/.venv/
-**/.idea
-**/.virtual_documents
-**/.ipynb_checkpoints/
-**/__pycache__/
-**/desktop.ini
-**/env
-**/.env
-**/*.log
+# virtual environments
+.venv/
+venv/
+env/
 
-# 추적할 파일
+# build artifacts
+build/
+dist/
+*.egg-info/
 
+# pro package build artifacts
+pro/build/
+pro/dist/
+pro/*.egg-info/
 
-# 이 파일들은 항상 추적
-!/.env.example
-!.gitignore
-!.gitmessage.txt
-!README.md
-!requirements.txt
+# packaging artifacts
+*.whl
+*.tar.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project specific
+.env
+gumroad/

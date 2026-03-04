@@ -1,3 +1,0 @@
-[console_scripts]
-story-builder = story_builder.cli:main
-story_builder = story_builder.cli:main
