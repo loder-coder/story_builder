@@ -48,7 +48,7 @@ pip install story_builder_pro-0.1.0-py3-none-any.whl
    ```
 3. **Run the Demo**: Execute the included AI generation example:
    ```bash
-   python examples/ai_generate_demo.py
+   python pro/examples/ai_generate_demo.py
    ```
 
 ---
@@ -57,25 +57,33 @@ pip install story_builder_pro-0.1.0-py3-none-any.whl
 
 ### Growing your Story Graph
 ```python
-from story_builder import StoryGraph
-from story_builder_pro import BranchGenerator
+from story_builder.utils.loaders import load_graph
+from story_builder_pro.ai.provider_openrouter import OpenRouterProvider
+from story_builder_pro.ai.branch_generator import BranchGenerator
 
-# Initialize
-gen = BranchGenerator(api_key="your_api_key")
+# 1. Setup provider
+provider = OpenRouterProvider(api_key="your_api_key")
 
-# Generate new paths
-updated_graph = gen.generate_branches(
-    graph=my_graph,
-    node_id="current_node",
-    goal="The player discovers a hidden treasure chest.",
+# 2. Initialize generator
+gen = BranchGenerator(provider=provider, model="openai/gpt-4o", seed=42)
+
+# 3. Load your graph
+graph = load_graph("my_story.json")
+
+# 4. Generate new paths
+updated_graph = gen.generate(
+    graph=graph,
+    node_id="start",
+    goal="The player finds a mysterious map.",
     max_choices=2
 )
 ```
 
 ### Advanced LLM Configuration
-You can specify the model to use:
+You can specify different models via the provider:
 ```python
-gen = BranchGenerator(model="anthropic/claude-3-opus")
+provider = OpenRouterProvider(model="anthropic/claude-3-opus")
+gen = BranchGenerator(provider=provider)
 ```
 
 ---

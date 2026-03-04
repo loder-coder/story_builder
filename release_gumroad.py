@@ -57,12 +57,12 @@ def main():
 
         # Add Examples
         examples_to_include = [
-            "examples/ai_generate_demo.py",
-            "examples/minimal_story.json"
+            ("pro/examples/ai_generate_demo.py", "examples/ai_generate_demo.py"),
+            ("examples/minimal_story.json", "examples/minimal_story.json")
         ]
-        for ex in examples_to_include:
-            if os.path.exists(ex):
-                zipf.write(ex, os.path.join("examples", os.path.basename(ex)))
+        for src, dst in examples_to_include:
+            if os.path.exists(src):
+                zipf.write(src, dst)
 
     print(f"\n[SUCCESS] Package created: {zip_path}")
 

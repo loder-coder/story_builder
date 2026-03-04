@@ -31,3 +31,10 @@ Thumbs.db
 # Project specific
 .env
 gumroad/
+
+# test cache
+.pytest_cache/
+
+# type/lint caches
+.mypy_cache/
+.ruff_cache/
