@@ -1,0 +1,13 @@
+digraph StoryGraph {
+rankdir="LR";
+node [shape=box, style=rounded];
+"start" [label="Start
+(start)"];
+"start" -> "left_room" [label="left"];
+"start" -> "right_room" [label="right"];
+"left_room" [label="Left
+(left_room)"];
+"right_room" [label="Right
+(right_room)"];
+start -> "start" [style=dotted];
+}

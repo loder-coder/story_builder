@@ -1,0 +1,24 @@
+digraph StoryGraph {
+rankdir="LR";
+node [shape=box, style=rounded];
+"town" [label="Small Town
+(town)"];
+"town" -> "forest" [label="Push the gate"];
+"town" -> "town" [label="Look for a key"];
+"town" -> "forest_path" [label="explore forest"];
+"town" -> "village_square" [label="enter village"];
+"town" -> "river_bank" [label="follow river"];
+"forest" [label="Dark Forest
+(forest)"];
+"forest" -> "treasure" [label="Open chest"];
+"forest" -> "town" [label="Head back"];
+"treasure" [label="Victory!
+(treasure)"];
+"forest_path" [label="The Forest Path
+(forest_path)"];
+"village_square" [label="Village Square
+(village_square)"];
+"river_bank" [label="The River Bank
+(river_bank)"];
+start -> "town" [style=dotted];
+}

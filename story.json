@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "title": "My New Story"
+  },
+  "nodes": {
+    "start": {
+      "id": "start",
+      "title": "The Beginning",
+      "body": "You stand at a crossroads. Where will you go?",
+      "choices": [
+        {
+          "trigger": "Go North",
+          "target_node_id": "north_node"
+        },
+        {
+          "trigger": "Go South",
+          "target_node_id": "south_node"
+        }
+      ]
+    },
+    "north_node": {
+      "id": "north_node",
+      "title": "The North Pole",
+      "body": "It is freezing here. You see a polar bear.",
+      "choices": []
+    },
+    "south_node": {
+      "id": "south_node",
+      "title": "The Sunny South",
+      "body": "Beach vibes everywhere. You feel relaxed.",
+      "choices": []
+    }
+  },
+  "start_node_id": "start"
+}

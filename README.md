@@ -1,6 +1,6 @@
 # 🚀 Story Builder Engine
 
-> **Deterministic State-Driven Interactive Narrative Engine for Python Developers**
+> **Story Builder is an AI-powered branching narrative engine for games and interactive fiction.**
 
 Story Builder is a framework-agnostic Python SDK that provides a deterministic, state-driven engine for executing branching narratives with built-in validation and performance tracking.
 
@@ -8,14 +8,68 @@ Unlike "vibes-based" AI wrappers, Story Builder provides a rigorous mathematical
 
 ---
 
+# 🚀 Quickstart
+
+**1. Install the SDK**
+```bash
+pip install story-builder-sdk
+```
+
+**2. Generate a story**
+```bash
+story-builder generate "Cyberpunk detective story"
+```
+
+**3. Run the AI demo**
+```bash
+story-builder demo-ai
+```
+*This will generate a branching story graph and visualize it automatically.*
+
+---
+
 ## 🏗 Key Features
 
+- **AI-Powered Generation:** Create complex branching stories from a single prompt.
 - **Deterministic Execution:** No AI hallucinations in your core story logic.
 - **Unified Schema:** Pydantic-driven story graphs and node structures.
 - **Stat-Based Branching:** Transition between nodes based on complex condition evaluations.
 - **Mutable State Engine:** Snapshot and rollback support with isolated state variables.
-- **Developer-First:** Built-in CLI, JSON export, and performance benchmarking.
-- **AI Extensions:** Optional LLM-powered content generation via OpenRouter.
+- **Developer-First:** Built-in CLI, JSON export, Ink support, and visualization.
+
+---
+
+## 🕹️ CLI Usage
+
+Play an interactive story, generate new ones, or visualize graphs.
+
+```bash
+# Initialize a starter project
+story-builder init
+
+# Play a story
+story-builder play story.json
+
+# Visualize a story
+story-builder visualize story.json
+
+# Validate a story
+story-builder validate story.json
+
+# Export to Ink
+story-builder export story.json --format ink
+```
+
+---
+
+## 🎨 AI Features
+
+Story Builder integrates with OpenRouter for high-quality narrative generation.
+
+```bash
+export OPENROUTER_API_KEY="YOUR_KEY"
+story-builder generate "A space horror odyssey" --nodes 10
+```
 
 ---
 
@@ -25,88 +79,12 @@ Unlike "vibes-based" AI wrappers, Story Builder provides a rigorous mathematical
 # Basic installation
 pip install story-builder
 
-# With AI features
+# With AI features (Pro)
 pip install "story-builder[ai]"
 
 # With Visualization features
 pip install "story-builder[viz]"
 ```
-
----
-
-## ⚡ Quickstart (SDK Usage)
-
-```python
-from story_builder import StoryGraph, Node, Choice, Effect, Engine
-
-# 1. Define your story structure
-story_graph = StoryGraph(
-    start_node_id="intro",
-    nodes={
-        "intro": Node(
-            id="intro",
-            title="The Gatehouse",
-            body="You stand before the ancient stone gate.",
-            choices=[
-                Choice(
-                    trigger="Push the gate", 
-                    target_node_id="inside",
-                    effects=[Effect(target="strength", operation="increment", value=1)]
-                )
-            ]
-        ),
-        "inside": Node(
-            id="inside",
-            title="Castle Courtyard",
-            body="Welcome to the inner sanctum.",
-            choices=[]
-        )
-    }
-)
-
-# 2. Initialize the Engine
-engine = Engine(story_graph)
-
-# 3. Traverse the story
-node, triggers, variables = engine.run("intro", variables={"strength": 10})
-print(f"[{node.title}] {node.body}")
-```
-
----
-
-## 🕹️ CLI Usage
-
-Play any story graph JSON directly from your terminal:
-
-```bash
-# Using the shortcut
-story-builder play examples/minimal_story.json
-
-# Or using python module
-python -m story_builder.cli play examples/minimal_story.json
-```
-
----
-
-## 🎨 Visualize Your Story Graph
-
-Generate a visual representation of your narrative graph.
-
-### 1. Install extras
-```bash
-pip install "story-builder[viz]"
-```
-*Note: This also requires [GraphViz](https://graphviz.org/download/) to be installed on your system if you want to render images.*
-
-### 2. Run the command
-```bash
-story-builder visualize examples/minimal_story.json
-```
-
-It will generate a `.dot` file and a `.png` file, and attempt to open the image.
-
-**Example Visualization:**
-(Generated graph image will appear here)
 
 ---
 

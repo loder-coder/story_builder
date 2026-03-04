@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "story-builder"
-version = "0.1.0"
+name = "story-builder-sdk"
+version = "0.1.2"
 description = "Deterministic State-Driven Interactive Narrative Engine SDK"
 readme = "README.md"
 requires-python = ">=3.9"
