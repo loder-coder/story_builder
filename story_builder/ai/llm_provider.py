@@ -1,12 +1,27 @@
 import os
 from typing import Dict, Any, Optional
-from langchain_openai import ChatOpenAI
+
+try:
+    from langchain_openai import ChatOpenAI
+    HAS_AI_DEPS = True
+except ImportError:
+    # We define a dummy class so the rest of the module doesn't crash on import
+    class ChatOpenAI:
+        def __init__(self, *args, **kwargs):
+            raise ImportError(
+                "AI features require extra dependencies. Install with: pip install story-builder[ai]"
+            )
+    HAS_AI_DEPS = False
 
 class OpenRouterLLM(ChatOpenAI):
     """
     Custom wrapper for OpenRouter compatibility.
     """
     def __init__(self, *args, **kwargs):
+        if not HAS_AI_DEPS:
+            raise ImportError(
+                "AI features require extra dependencies. Install with: pip install story-builder[ai]"
+            )
         super().__init__(*args, **kwargs)
 
     @property
@@ -21,6 +36,11 @@ class LLMProvider:
     
     @staticmethod
     def get_llm(model_name: str, api_key: Optional[str] = None, temperature: float = 0.7, streaming: bool = False):
+        if not HAS_AI_DEPS:
+            raise ImportError(
+                "AI features require extra dependencies. Install with: pip install story-builder[ai]"
+            )
+
         api_key = api_key or os.getenv("OPENROUTER_API_KEY")
         if not api_key:
             raise ValueError("OPENROUTER_API_KEY is required.")

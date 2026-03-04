@@ -2,7 +2,9 @@
 
 > **Deterministic State-Driven Interactive Narrative Engine for Python Developers**
 
-Story Builder Engine is a production-grade SDK for building branching narrative graphs with conditions, effects, and optional AI-assisted generation. Unlike "vibes-based" AI wrappers, Story Builder provides a rigorous mathematical model for story traversal, ensuring logical consistency and state management.
+Story Builder is a framework-agnostic Python SDK that provides a deterministic, state-driven engine for executing branching narratives with built-in validation and performance tracking.
+
+Unlike "vibes-based" AI wrappers, Story Builder provides a rigorous mathematical model for story traversal, ensuring logical consistency and reliable state management.
 
 ---
 
@@ -10,21 +12,31 @@ Story Builder Engine is a production-grade SDK for building branching narrative 
 
 - **Deterministic Execution:** No AI hallucinations in your core story logic.
 - **Unified Schema:** Pydantic-driven story graphs and node structures.
-- **Stat-Based Branching:** Transition between nodes based on complex (non-eval) condition evaluations.
-- **Mutable State Engine:** Effects can increment, decrement, append, or set state variables.
-- **Developer-First:** Built-in CLI, JSON export, and GraphViz visualization support.
-- **Pro AI Extensions (Optional):** Modular interfaces for LLM-powered content generation.
+- **Stat-Based Branching:** Transition between nodes based on complex condition evaluations.
+- **Mutable State Engine:** Snapshot and rollback support with isolated state variables.
+- **Developer-First:** Built-in CLI, JSON export, and performance benchmarking.
+- **AI Extensions:** Optional LLM-powered content generation via OpenRouter.
+
+---
+
+## 📜 Installation
+
+```bash
+# Basic installation
+pip install story-builder
+
+# With AI features (OpenRouter integration)
+pip install "story-builder[ai]"
+```
 
 ---
 
 ## ⚡ Quickstart (SDK Usage)
 
 ```python
-from story_builder.core.graph import StoryGraph
-from story_builder.core.node import Node, Choice, Effect, Condition
-from story_builder.core.executor import Engine
+from story_builder import StoryGraph, Node, Choice, Effect, Engine
 
-# Define your story
+# 1. Define your story structure
 story_graph = StoryGraph(
     start_node_id="intro",
     nodes={
@@ -49,23 +61,23 @@ story_graph = StoryGraph(
     }
 )
 
-# Initialize Engine
+# 2. Initialize the Engine
 engine = Engine(story_graph)
 
-# Traverse the story
-node, triggers, vars = engine.run("intro", variables={"strength": 10})
+# 3. Traverse the story
+node, triggers, variables = engine.run("intro", variables={"strength": 10})
 print(f"[{node.title}] {node.body}")
-print(f"Actions: {triggers}")
+print(f"Available Actions: {triggers}")
 ```
 
 ---
 
-## 🎮 CLI Demo
+## 🎮 CLI Usage
 
 Play any story graph JSON directly from your terminal:
 
 ```bash
-python -m story_builder.cli --load examples/minimal_story.json --play
+python -m story_builder.cli --load examples/minimal_story.json
 ```
 
 ---
@@ -77,31 +89,6 @@ Visualize your branching narrative with GraphViz:
 ```python
 from story_builder.export.graphviz_exporter import GraphVizExporter
 GraphVizExporter.export(story_graph, "story_map.dot")
-```
-
-Then render it: `dot -Tpng story_map.dot -o story_map.png`
-
----
-
-## 🆚 Comparison with Alternatives
-
-| Feature | Story Builder | Twine/Ink | Generic LLM Chat |
-| :--- | :--- | :--- | :--- |
-| **Logic** | Deterministic | Deterministic | Probabilistic (Hallucinations) |
-| **Data Format** | JSON/Pydantic | DSL (.ink / .twee) | Unstructured |
-| **Python Integration**| First-class SDK | Limited (Wrappers) | N/A |
-| **AI Integration** | Modular/Native | None (Standard) | Native/Only |
-
----
-
-## 📜 Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your-repo/story-builder.git
-
-# Install dependencies
-pip install pydantic
 ```
 
 ---

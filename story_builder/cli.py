@@ -1,9 +1,7 @@
 import argparse
 import os
 import json
-from story_builder.core.graph import StoryGraph
-from story_builder.core.executor import Engine
-from story_builder.core.state import EngineState
+from story_builder import Engine, StoryGraph, EngineState
 
 def main():
     parser = argparse.ArgumentParser(description="Story Builder Narrative Engine CLI")

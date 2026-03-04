@@ -1,6 +1,5 @@
 import json
-from story_builder.core.graph import StoryGraph
-from story_builder.core.node import Node, Choice, Effect, Condition
+from story_builder import StoryGraph, Node, Choice, Effect, Condition
 from story_builder.export.json_exporter import JsonExporter
 
 # 1. Define story

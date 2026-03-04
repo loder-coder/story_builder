@@ -1,7 +1,4 @@
-from story_builder.core.graph import StoryGraph
-from story_builder.core.node import Node, Choice
-from story_builder.core.executor import Engine
-from story_builder.core.state import EngineState
+from story_builder import StoryGraph, Node, Choice, Engine, EngineState
 
 def demo_advanced_features():
     # 1. Setup a graph with weighted branches (Branch Probability Weighting)
