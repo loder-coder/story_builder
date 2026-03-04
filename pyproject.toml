@@ -14,8 +14,10 @@ dependencies = [
 
 [project.optional-dependencies]
 ai = ["langchain-openai>=0.1.0"]
+viz = ["graphviz>=0.20.0"]
 
 [project.scripts]
+story-builder = "story_builder.cli:main"
 story_builder = "story_builder.cli:main"
 
 [tool.setuptools.packages.find]

@@ -38,6 +38,6 @@ def evaluate_condition(condition: Condition, variables: Dict[str, Any]) -> bool:
         try:
             return val not in target_val
         except TypeError:
-            return True
+            return False
     
     return False

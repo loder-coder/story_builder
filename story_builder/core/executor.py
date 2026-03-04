@@ -17,6 +17,7 @@ class ProfMetrics(NamedTuple):
 class Engine:
     def __init__(self, graph: StoryGraph, seed: Optional[int] = None):
         self.graph = graph
+        self.graph.validate_graph() # Task 1: Auto-validation
         self._random = random.Random(seed) if seed is not None else random.Random()
         self._node_cache: Dict[str, Node] = {} # Simple in-memory cache for graph lookups
         self._metrics_log: List[ProfMetrics] = []
@@ -94,6 +95,23 @@ class Engine:
         state.history.append(trigger)
         
         return self.run(state.current_node_id, new_vars)
+
+    def play(self, state: EngineState, max_steps: int = 1000) -> Tuple[Node, List[str]]:
+        """
+        Auto-advance as long as there is exactly one valid choice.
+        Protects against infinite loops via max_steps.
+        """
+        steps = 0
+        while steps < max_steps:
+            node, triggers, _ = self.run(state.current_node_id, state.variables)
+            if len(triggers) != 1:
+                return node, triggers
+            
+            # Auto-advance
+            self.process_trigger(triggers[0], state)
+            steps += 1
+            
+        raise RuntimeError("max steps exceeded")
 
     def get_performance_report(self) -> Dict[str, Any]:
         """Detailed performance and benchmark report."""

@@ -16,8 +16,8 @@ class Effect(BaseModel):
 class Choice(BaseModel):
     trigger: str
     to: str = Field(..., alias="target_node_id")
-    conditions: List[Condition] = []
-    effects: List[Effect] = []
+    conditions: List[Condition] = Field(default_factory=list)
+    effects: List[Effect] = Field(default_factory=list)
     weight: float = 1.0
     probability: Optional[float] = None
     narrative_tag: Optional[str] = None
@@ -29,5 +29,5 @@ class Node(BaseModel):
     id: str
     title: str
     body: str
-    tags: List[str] = []
-    choices: List[Choice] = []
+    tags: List[str] = Field(default_factory=list)
+    choices: List[Choice] = Field(default_factory=list)

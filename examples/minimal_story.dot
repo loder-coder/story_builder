@@ -1,0 +1,15 @@
+digraph StoryGraph {
+rankdir="LR";
+node [shape=box, style=rounded];
+"town" [label="Small Town
+(town)"];
+"town" -> "forest" [label="Push the gate"];
+"town" -> "town" [label="Look for a key"];
+"forest" [label="Dark Forest
+(forest)"];
+"forest" -> "treasure" [label="Open chest"];
+"forest" -> "town" [label="Head back"];
+"treasure" [label="Victory!
+(treasure)"];
+start -> "town" [style=dotted];
+}

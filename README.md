@@ -25,8 +25,11 @@ Unlike "vibes-based" AI wrappers, Story Builder provides a rigorous mathematical
 # Basic installation
 pip install story-builder
 
-# With AI features (OpenRouter integration)
+# With AI features
 pip install "story-builder[ai]"
+
+# With Visualization features
+pip install "story-builder[viz]"
 ```
 
 ---
@@ -67,29 +70,43 @@ engine = Engine(story_graph)
 # 3. Traverse the story
 node, triggers, variables = engine.run("intro", variables={"strength": 10})
 print(f"[{node.title}] {node.body}")
-print(f"Available Actions: {triggers}")
 ```
 
 ---
 
-## 🎮 CLI Usage
+## 🕹️ CLI Usage
 
 Play any story graph JSON directly from your terminal:
 
 ```bash
-python -m story_builder.cli --load examples/minimal_story.json
+# Using the shortcut
+story-builder play examples/minimal_story.json
+
+# Or using python module
+python -m story_builder.cli play examples/minimal_story.json
 ```
 
 ---
 
-## 🎨 Visualization
+## 🎨 Visualize Your Story Graph
 
-Visualize your branching narrative with GraphViz:
+Generate a visual representation of your narrative graph.
 
-```python
-from story_builder.export.graphviz_exporter import GraphVizExporter
-GraphVizExporter.export(story_graph, "story_map.dot")
+### 1. Install extras
+```bash
+pip install "story-builder[viz]"
 ```
+*Note: This also requires [GraphViz](https://graphviz.org/download/) to be installed on your system if you want to render images.*
+
+### 2. Run the command
+```bash
+story-builder visualize examples/minimal_story.json
+```
+
+It will generate a `.dot` file and a `.png` file, and attempt to open the image.
+
+**Example Visualization:**
+(Generated graph image will appear here)
 
 ---
 
