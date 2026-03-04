@@ -12,23 +12,44 @@ Automatically expand your story graph by generating logical branches and new nod
 
 ---
 
-## 🛠️ Setup
+## 🛠️ Installation
 
-### 1. Install Dependencies
-Requires the base `story-builder` package and AI extras.
+### Scenario A: Installing from included wheels (Offline/Manual)
+If you are using the files provided in the zip package:
 ```bash
-pip install story-builder-pro
+# 1. Install the Lite core first
+pip install story_builder-0.1.0-py3-none-any.whl
+
+# 2. Install the Pro package
+pip install story_builder_pro-0.1.0-py3-none-any.whl
 ```
 
-### 2. API Key Configuration
-Get an API key from [OpenRouter](https://openrouter.ai/).
-Set it as an environment variable:
+### Scenario B: Installing using PyPI for Lite
+If the Lite version is already installed from PyPI or you wish to download it:
 ```bash
-# Windows
-set OPENROUTER_API_KEY=your_key_here
-# Linux/macOS
-export OPENROUTER_API_KEY=your_key_here
+# 1. Install Lite from PyPI
+pip install story-builder
+
+# 2. Install Pro from the provided wheel
+pip install story_builder_pro-0.1.0-py3-none-any.whl
 ```
+
+---
+
+## ⚡ 5-Minute Quickstart
+
+1. **Install** the packages using one of the scenarios above.
+2. **Configure Access**: Get an API key from [OpenRouter](https://openrouter.ai/) and set it as an environment variable:
+   ```bash
+   # Windows
+   set OPENROUTER_API_KEY=your_key_here
+   # Linux/macOS
+   export OPENROUTER_API_KEY=your_key_here
+   ```
+3. **Run the Demo**: Execute the included AI generation example:
+   ```bash
+   python examples/ai_generate_demo.py
+   ```
 
 ---
 

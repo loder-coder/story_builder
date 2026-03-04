@@ -31,6 +31,13 @@ def main():
     
     zip_path = "gumroad/story_builder_pro_package.zip"
     with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        # Add Lite Wheel
+        lite_wheels = glob.glob("dist/*.whl")
+        if not lite_wheels:
+            print("Error: Lite wheel not found!")
+            sys.exit(1)
+        zipf.write(lite_wheels[0], os.path.basename(lite_wheels[0]))
+
         # Add Pro Wheel
         pro_wheels = glob.glob("pro/dist/*.whl")
         if not pro_wheels:
@@ -48,9 +55,12 @@ def main():
             if os.path.exists(src):
                 zipf.write(src, dst)
 
-        # Add Pro Examples
-        pro_examples = ["examples/ai_generate_demo.py"]
-        for ex in pro_examples:
+        # Add Examples
+        examples_to_include = [
+            "examples/ai_generate_demo.py",
+            "examples/minimal_story.json"
+        ]
+        for ex in examples_to_include:
             if os.path.exists(ex):
                 zipf.write(ex, os.path.join("examples", os.path.basename(ex)))
 
