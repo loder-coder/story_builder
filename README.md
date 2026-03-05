@@ -1,5 +1,5 @@
 # 🚀 Story Builder
-
+⭐ Star this repo if you find it useful!
 > **AI-powered branching narrative engine for games and interactive fiction**
 
 Story Builder is a deterministic Python engine for building, validating, and executing branching story graphs.
