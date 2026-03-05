@@ -1,33 +1,129 @@
 {
   "metadata": {
-    "title": "My New Story"
+    "title": "MOCK: cyberpunk detective..."
   },
   "nodes": {
     "start": {
       "id": "start",
-      "title": "The Beginning",
-      "body": "You stand at a crossroads. Where will you go?",
+      "title": "Start: Sector 0",
+      "body": "A drone hums overhead.",
+      "tags": [],
       "choices": [
         {
-          "trigger": "Go North",
-          "target_node_id": "north_node"
-        },
-        {
-          "trigger": "Go South",
-          "target_node_id": "south_node"
+          "trigger": "investigate",
+          "to": "node_1",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
         }
       ]
     },
-    "north_node": {
-      "id": "north_node",
-      "title": "The North Pole",
-      "body": "It is freezing here. You see a polar bear.",
+    "node_1": {
+      "id": "node_1",
+      "title": "Sector 2",
+      "body": "A drone hums overhead. (2)",
+      "tags": [],
+      "choices": [
+        {
+          "trigger": "leave",
+          "to": "node_2",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        },
+        {
+          "trigger": "hide",
+          "to": "node_3",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        }
+      ]
+    },
+    "node_2": {
+      "id": "node_2",
+      "title": "Sector 3",
+      "body": "Neon lights flicker. (3)",
+      "tags": [],
+      "choices": [
+        {
+          "trigger": "climb",
+          "to": "node_4",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        }
+      ]
+    },
+    "node_3": {
+      "id": "node_3",
+      "title": "Sector 4",
+      "body": "A drone hums overhead. (4)",
+      "tags": [],
+      "choices": [
+        {
+          "trigger": "look",
+          "to": "node_5",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        },
+        {
+          "trigger": "investigate",
+          "to": "node_6",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        },
+        {
+          "trigger": "climb",
+          "to": "node_7",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        }
+      ]
+    },
+    "node_4": {
+      "id": "node_4",
+      "title": "Sector 5",
+      "body": "Neon lights flicker. (5)",
+      "tags": [],
       "choices": []
     },
-    "south_node": {
-      "id": "south_node",
-      "title": "The Sunny South",
-      "body": "Beach vibes everywhere. You feel relaxed.",
+    "node_5": {
+      "id": "node_5",
+      "title": "Sector 6",
+      "body": "Neon lights flicker. (6)",
+      "tags": [],
+      "choices": []
+    },
+    "node_6": {
+      "id": "node_6",
+      "title": "Sector 7",
+      "body": "Neon lights flicker. (7)",
+      "tags": [],
+      "choices": []
+    },
+    "node_7": {
+      "id": "node_7",
+      "title": "Sector 8",
+      "body": "Neon lights flicker. (8)",
+      "tags": [],
       "choices": []
     }
   },

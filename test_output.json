@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "title": "MOCK: Cyberpunk test..."
+  },
+  "nodes": {
+    "start": {
+      "id": "start",
+      "title": "Start: Neon Sector",
+      "body": "Neon lights flicker.",
+      "tags": [],
+      "choices": [
+        {
+          "trigger": "talk",
+          "to": "node_1",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        }
+      ]
+    },
+    "node_1": {
+      "id": "node_1",
+      "title": "Neon Sector 2",
+      "body": "Neon lights flicker. (2)",
+      "tags": [],
+      "choices": [
+        {
+          "trigger": "talk",
+          "to": "node_2",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        },
+        {
+          "trigger": "go",
+          "to": "node_3",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        }
+      ]
+    },
+    "node_2": {
+      "id": "node_2",
+      "title": "Neon Sector 3",
+      "body": "Neon lights flicker. (3)",
+      "tags": [],
+      "choices": [
+        {
+          "trigger": "go",
+          "to": "node_4",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        },
+        {
+          "trigger": "look",
+          "to": "node_5",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        }
+      ]
+    },
+    "node_3": {
+      "id": "node_3",
+      "title": "Neon Sector 4",
+      "body": "Neon lights flicker. (4)",
+      "tags": [],
+      "choices": [
+        {
+          "trigger": "talk",
+          "to": "node_6",
+          "conditions": [],
+          "effects": [],
+          "weight": 1.0,
+          "probability": null,
+          "narrative_tag": null
+        }
+      ]
+    },
+    "node_4": {
+      "id": "node_4",
+      "title": "Neon Sector 5",
+      "body": "Neon lights flicker. (5)",
+      "tags": [],
+      "choices": []
+    },
+    "node_5": {
+      "id": "node_5",
+      "title": "Neon Sector 6",
+      "body": "Neon lights flicker. (6)",
+      "tags": [],
+      "choices": []
+    },
+    "node_6": {
+      "id": "node_6",
+      "title": "Neon Sector 7",
+      "body": "Neon lights flicker. (7)",
+      "tags": [],
+      "choices": []
+    }
+  },
+  "start_node_id": "start"
+}

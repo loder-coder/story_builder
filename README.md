@@ -1,5 +1,7 @@
-# 🚀 Story Builder
+ 🚀 Story Builder
+
 ⭐ Star this repo if you find it useful!
+
 > **AI-powered branching narrative engine for games and interactive fiction**
 
 Story Builder is a deterministic Python engine for building, validating, and executing branching story graphs.
@@ -8,11 +10,18 @@ Generate stories with AI, validate them with a strict schema, and run them with 
 
 ---
 
-# 🎬 Demo
+# ⚡ Install
+
+```bash
+pip install story-builder-sdk
+
+Verify installation:
+
+story-builder --help
+🎬 Demo
 
 Generate a story with one command:
 
-```bash
 story-builder generate "Cyberpunk detective story"
 
 Output:
@@ -23,12 +32,6 @@ story_graph.dot
 Visualize the graph:
 
 story-builder visualize story.json --dot-only
-⚡ Install
-pip install story-builder-sdk
-
-Verify installation:
-
-story-builder --help
 🚀 Quickstart (1 minute)
 
 Generate a branching story:
@@ -44,20 +47,38 @@ Visualize the graph:
 story-builder visualize story.json --dot-only
 🧠 AI Story Generation
 
-Story Builder can generate story graphs using AI.
+Story Builder can generate complex story graphs using AI.
 
-Set your API key.
+Set your API key:
 
-Windows
+**Windows**
+```powershell
 $env:OPENROUTER_API_KEY="YOUR_KEY"
-macOS / Linux
+```
+
+**macOS / Linux**
+```bash
 export OPENROUTER_API_KEY="YOUR_KEY"
+```
 
-Generate a story:
+### Advanced Generation
 
-story-builder generate "A space horror odyssey"
+Control the graph size and structure with flags:
 
-If no API key is provided, Story Builder runs in mock mode.
+```bash
+story-builder generate "Cyberpunk detective story" --nodes 12 --branching 3 --depth 4
+```
+
+- `--nodes N`: Total target nodes (default 6)
+- `--branching K`: Average branching factor (default 2)
+- `--depth D`: Maximum depth from start (default 3)
+- `--mock`: Force mock mode even if API key is available
+- `--seed S`: Seed for deterministic generation
+
+If no API key is provided OR `--mock` is used, Story Builder runs in a deterministic **mock mode**.
+
+> [!NOTE]
+> GraphViz binaries are required only for rendering images (PNG/SVG). Generating `.dot` files and `.json` graphs works without any external dependencies.
 
 🕹 CLI Commands
 story-builder init
@@ -69,19 +90,13 @@ story-builder export
 story-builder demo-ai
 🏗 Features
 
-AI-powered story generation
-
-Deterministic branching engine
-
-Graph validation with schema enforcement
-
-Stateful narrative execution
-
-Graph visualization
-
-Ink export support
-
-CLI-first developer workflow
+• AI-powered story generation
+• Deterministic branching engine
+• Graph validation with schema enforcement
+• Stateful narrative execution
+• Graph visualization
+• Ink export support
+• CLI-first developer workflow
 
 💎 Pro Version
 
@@ -94,10 +109,15 @@ pip install story-builder-sdk
 Then install Pro:
 
 pip install story_builder_pro-0.1.2-py3-none-any.whl
+📚 Examples
+
+Example story graphs are available in the /examples directory.
+
+Visualize one with:
+
+story-builder visualize examples/cyberpunk_detective.json
 📜 License
 
 MIT License
 
 Structure Your Story. Control Your World.
-
-⭐ Star this repo if you find it useful!

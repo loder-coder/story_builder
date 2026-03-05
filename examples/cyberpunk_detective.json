@@ -1,0 +1,32 @@
+{
+  "metadata": { "title": "Cyberpunk Detective" },
+  "start_node_id": "office",
+  "nodes": {
+    "office": {
+      "id": "office",
+      "title": "Detective Office",
+      "body": "Rain hits the neon-lit window. A new case arrives.",
+      "tags": [],
+      "choices": [
+        { "trigger": "accept", "to": "crime_scene", "conditions": [], "effects": [] },
+        { "trigger": "ignore", "to": "bar", "conditions": [], "effects": [] }
+      ]
+    },
+
+    "crime_scene": {
+      "id": "crime_scene",
+      "title": "Crime Scene",
+      "body": "The alley smells of ozone and blood.",
+      "tags": [],
+      "choices": []
+    },
+
+    "bar": {
+      "id": "bar",
+      "title": "Neon Bar",
+      "body": "Music pulses while shady figures watch you.",
+      "tags": [],
+      "choices": []
+    }
+  }
+}

@@ -1,0 +1,13 @@
+digraph StoryGraph {
+rankdir="LR";
+node [shape=box, style=rounded];
+"office" [label="Detective Office
+(office)"];
+"office" -> "crime_scene" [label="accept"];
+"office" -> "bar" [label="ignore"];
+"crime_scene" [label="Crime Scene
+(crime_scene)"];
+"bar" [label="Neon Bar
+(bar)"];
+start -> "office" [style=dotted];
+}

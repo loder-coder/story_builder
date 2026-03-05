@@ -1,0 +1,32 @@
+{
+  "metadata": { "title": "Fantasy Quest" },
+  "start_node_id": "village",
+  "nodes": {
+    "village": {
+      "id": "village",
+      "title": "Village",
+      "body": "The village elder asks you to defeat a dragon.",
+      "tags": [],
+      "choices": [
+        { "trigger": "accept", "to": "mountain", "conditions": [], "effects": [] },
+        { "trigger": "decline", "to": "tavern", "conditions": [], "effects": [] }
+      ]
+    },
+
+    "mountain": {
+      "id": "mountain",
+      "title": "Dragon Mountain",
+      "body": "The dragon roars from the peak.",
+      "tags": [],
+      "choices": []
+    },
+
+    "tavern": {
+      "id": "tavern",
+      "title": "Tavern",
+      "body": "You relax while adventurers boast about their quests.",
+      "tags": [],
+      "choices": []
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "metadata": { "title": "Haunted Mansion" },
+  "start_node_id": "gate",
+  "nodes": {
+    "gate": {
+      "id": "gate",
+      "title": "Mansion Gate",
+      "body": "The iron gate creaks open slowly.",
+      "tags": [],
+      "choices": [
+        { "trigger": "enter", "to": "hall", "conditions": [], "effects": [] },
+        { "trigger": "leave", "to": "road", "conditions": [], "effects": [] }
+      ]
+    },
+
+    "hall": {
+      "id": "hall",
+      "title": "Grand Hall",
+      "body": "A chandelier flickers above dusty furniture.",
+      "tags": [],
+      "choices": []
+    },
+
+    "road": {
+      "id": "road",
+      "title": "Lonely Road",
+      "body": "You decide the mansion is too dangerous.",
+      "tags": [],
+      "choices": []
+    }
+  }
+}

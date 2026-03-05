@@ -1,0 +1,28 @@
+digraph StoryGraph {
+rankdir="LR";
+node [shape=box, style=rounded];
+"start" [label="Start: Sector 0
+(start)"];
+"start" -> "node_1" [label="investigate"];
+"node_1" [label="Sector 2
+(node_1)"];
+"node_1" -> "node_2" [label="leave"];
+"node_1" -> "node_3" [label="hide"];
+"node_2" [label="Sector 3
+(node_2)"];
+"node_2" -> "node_4" [label="climb"];
+"node_3" [label="Sector 4
+(node_3)"];
+"node_3" -> "node_5" [label="look"];
+"node_3" -> "node_6" [label="investigate"];
+"node_3" -> "node_7" [label="climb"];
+"node_4" [label="Sector 5
+(node_4)"];
+"node_5" [label="Sector 6
+(node_5)"];
+"node_6" [label="Sector 7
+(node_6)"];
+"node_7" [label="Sector 8
+(node_7)"];
+start -> "start" [style=dotted];
+}
