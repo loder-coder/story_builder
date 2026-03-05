@@ -1,91 +1,103 @@
-# 🚀 Story Builder Engine
+# 🚀 Story Builder
 
-> **Story Builder is an AI-powered branching narrative engine for games and interactive fiction.**
+> **AI-powered branching narrative engine for games and interactive fiction**
 
-Story Builder is a framework-agnostic Python SDK that provides a deterministic, state-driven engine for executing branching narratives with built-in validation and performance tracking.
+Story Builder is a deterministic Python engine for building, validating, and executing branching story graphs.
 
-Unlike "vibes-based" AI wrappers, Story Builder provides a rigorous mathematical model for story traversal, ensuring logical consistency and reliable state management.
+Generate stories with AI, validate them with a strict schema, and run them with a reliable state engine.
 
 ---
 
-# 🚀 Quickstart
+# 🎬 Demo
 
-**1. Install the SDK**
-```bash
-pip install story-builder-sdk
-```
+Generate a story with one command:
 
-**2. Generate a story**
 ```bash
 story-builder generate "Cyberpunk detective story"
-```
 
-**3. Run the AI demo**
-```bash
-story-builder demo-ai
-```
-*This will generate a branching story graph and visualize it automatically.*
+Output:
 
----
+story.json
+story_graph.dot
 
-## 🏗 Key Features
+Visualize the graph:
 
-- **AI-Powered Generation:** Create complex branching stories from a single prompt.
-- **Deterministic Execution:** No AI hallucinations in your core story logic.
-- **Unified Schema:** Pydantic-driven story graphs and node structures.
-- **Stat-Based Branching:** Transition between nodes based on complex condition evaluations.
-- **Mutable State Engine:** Snapshot and rollback support with isolated state variables.
-- **Developer-First:** Built-in CLI, JSON export, Ink support, and visualization.
+story-builder visualize story.json --dot-only
+⚡ Install
+pip install story-builder-sdk
 
----
+Verify installation:
 
-## 🕹️ CLI Usage
+story-builder --help
+🚀 Quickstart (1 minute)
 
-Play an interactive story, generate new ones, or visualize graphs.
+Generate a branching story:
 
-```bash
-# Initialize a starter project
-story-builder init
+story-builder generate "A haunted mansion mystery"
 
-# Play a story
+Play the story:
+
 story-builder play story.json
 
-# Visualize a story
-story-builder visualize story.json
+Visualize the graph:
 
-# Validate a story
-story-builder validate story.json
+story-builder visualize story.json --dot-only
+🧠 AI Story Generation
 
-# Export to Ink
-story-builder export story.json --format ink
-```
+Story Builder can generate story graphs using AI.
 
----
+Set your API key.
 
-## 🎨 AI Features
-
-Story Builder integrates with OpenRouter for high-quality narrative generation.
-
-```bash
+Windows
+$env:OPENROUTER_API_KEY="YOUR_KEY"
+macOS / Linux
 export OPENROUTER_API_KEY="YOUR_KEY"
-story-builder generate "A space horror odyssey" --nodes 10
-```
 
----
+Generate a story:
 
-## 📜 Installation
+story-builder generate "A space horror odyssey"
 
-```bash
-# Basic installation
-pip install story-builder
+If no API key is provided, Story Builder runs in mock mode.
 
-# With AI features (Pro)
-pip install "story-builder[ai]"
+🕹 CLI Commands
+story-builder init
+story-builder generate
+story-builder play
+story-builder visualize
+story-builder validate
+story-builder export
+story-builder demo-ai
+🏗 Features
 
-# With Visualization features
-pip install "story-builder[viz]"
-```
+AI-powered story generation
 
----
+Deterministic branching engine
 
-*Structure Your Story, Control Your World.*
+Graph validation with schema enforcement
+
+Stateful narrative execution
+
+Graph visualization
+
+Ink export support
+
+CLI-first developer workflow
+
+💎 Pro Version
+
+Advanced AI branch generation is available in Story Builder Pro.
+
+Install Lite SDK first:
+
+pip install story-builder-sdk
+
+Then install Pro:
+
+pip install story_builder_pro-0.1.2-py3-none-any.whl
+📜 License
+
+MIT License
+
+Structure Your Story. Control Your World.
+
+⭐ Star this repo if you find it useful!
